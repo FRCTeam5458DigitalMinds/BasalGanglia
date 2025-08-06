@@ -1,0 +1,86 @@
+{
+  "version": "2025.0",
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 1.2663920454545454,
+        "y": 6.976590909090909
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 1.5810759310439213,
+        "y": 6.697708428102241
+      },
+      "isLocked": false,
+      "linkedName": "TopStation"
+    },
+    {
+      "anchor": {
+        "x": 2.582642045454545,
+        "y": 5.620454545454545
+      },
+      "prevControl": {
+        "x": 2.459932734337211,
+        "y": 5.838267366392866
+      },
+      "nextControl": {
+        "x": 2.8516081834579436,
+        "y": 5.143031335088802
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 2.762130681818182,
+        "y": 3.5962215909090904
+      },
+      "prevControl": {
+        "x": 2.488885336986782,
+        "y": 4.288972092929702
+      },
+      "nextControl": {
+        "x": 2.853861665831379,
+        "y": 3.363658854057353
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 3.9188352272727274,
+        "y": 2.728693181818181
+      },
+      "prevControl": {
+        "x": 3.7057936865422705,
+        "y": 2.8749989822613995
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": "RBottomLeft"
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [],
+  "pointTowardsZones": [],
+  "eventMarkers": [],
+  "globalConstraints": {
+    "maxVelocity": 4.5,
+    "maxAcceleration": 3.5,
+    "maxAngularVelocity": 540.0,
+    "maxAngularAcceleration": 720.0,
+    "nominalVoltage": 12.0,
+    "unlimited": false
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": 60.36161631184868
+  },
+  "reversed": false,
+  "folder": "TopStation",
+  "idealStartingState": {
+    "velocity": 0,
+    "rotation": -55.0
+  },
+  "useDefaultConstraints": true
+}

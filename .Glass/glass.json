@@ -1,0 +1,65 @@
+{
+  "NetworkTables": {
+    "Retained Values": {
+      "open": false
+    },
+    "Transitory Values": {
+      "open": false
+    },
+    "types": {
+      "/FMSInfo": "FMSInfo",
+      "/Pose": "Field2d",
+      "/SmartDashboard/Alerts": "Alerts",
+      "/SmartDashboard/Auto Chooser": "String Chooser",
+      "/SmartDashboard/Field": "Field2d",
+      "/SmartDashboard/Module 0": "Mechanism2d",
+      "/SmartDashboard/Module 1": "Mechanism2d",
+      "/SmartDashboard/Module 2": "Mechanism2d",
+      "/SmartDashboard/Module 3": "Mechanism2d"
+    },
+    "windows": {
+      "/Pose": {
+        "builtin": "",
+        "height": 8.210550308227539,
+        "image": "C:\\Users\\DigitalMinds\\Downloads\\a4e14f41d8b16d4d3750fb95b7d25174783d0386.png",
+        "width": 16.541748046875
+      },
+      "/SmartDashboard/Field": {
+        "Robot": {
+          "arrowColor": [
+            0.9851852059364319,
+            0.4333193004131317,
+            0.3794787526130676,
+            255.0
+          ],
+          "color": [
+            0.7481481432914734,
+            0.1967352330684662,
+            0.1967352330684662,
+            255.0
+          ],
+          "length": 0.7099999785423279,
+          "width": 0.7099999785423279
+        },
+        "builtin": "",
+        "height": 8.109999656677246,
+        "image": "C:\\Users\\DigitalMinds\\Downloads\\reefy_weefy.png",
+        "width": 16.54199981689453,
+        "window": {
+          "name": "reefscape or whatever",
+          "visible": true
+        }
+      }
+    }
+  },
+  "NetworkTables Info": {
+    "Connections": {
+      "open": true
+    },
+    "visible": true
+  },
+  "NetworkTables Settings": {
+    "mode": "Client (NT4)",
+    "serverTeam": "5458"
+  }
+}

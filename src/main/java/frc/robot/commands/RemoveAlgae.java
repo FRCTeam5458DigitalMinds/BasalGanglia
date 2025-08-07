@@ -11,12 +11,14 @@ public class RemoveAlgae extends Command
     private final Claw CLAW;
     private final Intake INTAKE;
     private final int LEVEL;
+    private final int POWER;
 
-    public RemoveAlgae(Claw claw, Intake intake,int level)
+    public RemoveAlgae(Claw claw, Intake intake,int level, int power)
     {
         this.CLAW = claw;
         this.INTAKE = intake;
         this.LEVEL = level;
+        this.POWER = power;
 
         addRequirements(claw);
         addRequirements(intake);
@@ -24,7 +26,7 @@ public class RemoveAlgae extends Command
 
     public void initialize()
     {
-        CLAW.spinRollers(-100);
+        CLAW.spinRollers(-POWER);
         INTAKE.setRollers(0); //30 or 0 for processor
     }
 
@@ -38,7 +40,7 @@ public class RemoveAlgae extends Command
         SmartDashboard.putNumber("TOF", CLAW.getTOFDistance());
         if(CLAW.algaeDetected())
         {
-            CLAW.spinRollers(-95);
+            CLAW.spinRollers(-POWER);
             if (LEVEL == 0){
                 CLAW.toPosition(9);
                 INTAKE.setRollers(0);

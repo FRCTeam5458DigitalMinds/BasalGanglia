@@ -173,7 +173,7 @@ public class RobotContainer {
 
         operatorController.a().onTrue(new ReefScoring(CLAW, ELEVATOR, 1, INTAKE).andThen(new Eject(CLAW, 1)).andThen(new StowElevatorClaw(ELEVATOR, CLAW)));
         operatorController.x().and(() -> CLAW.pieceDetected()).and(() -> !operatorController.rightBumper().getAsBoolean()).and(() -> !operatorController.leftBumper().getAsBoolean()).onTrue(new ReefScoring(CLAW, ELEVATOR, 2, INTAKE));
-        operatorController.x().and(() -> !CLAW.pieceDetected()).and(() -> !operatorController.rightBumper().getAsBoolean()).and(() -> !operatorController.leftBumper().getAsBoolean()).onTrue(new ReefScoring(CLAW, ELEVATOR, 12, INTAKE).andThen(new RemoveAlgae(CLAW,INTAKE,2)));
+        operatorController.x().and(() -> !CLAW.pieceDetected()).and(() -> !operatorController.rightBumper().getAsBoolean()).and(() -> !operatorController.leftBumper().getAsBoolean()).onTrue(new ReefScoring(CLAW, ELEVATOR, 12, INTAKE).andThen(new RemoveAlgae(CLAW,INTAKE,2, 95)));
         //operatorController.axisGreaterThan(2, 0.1).onTrue(new ResetGyro(drivetrain));
         operatorController.axisGreaterThan(3, 0.05).onTrue(new Eject(CLAW, 2));
 
@@ -183,13 +183,13 @@ public class RobotContainer {
         driverController.axisGreaterThan(3, 0.05).onTrue(new EjectAlgae(CLAW, INTAKE));
         driverController.axisGreaterThan(3, 0.05).onFalse(new RetractAlgae(CLAW, INTAKE));
 
-        driverController.a().onTrue(new ReefScoring(CLAW, ELEVATOR, 0, INTAKE).andThen(new RemoveAlgae(CLAW,INTAKE,0)));
+        driverController.a().onTrue(new ReefScoring(CLAW, ELEVATOR, 0, INTAKE).andThen(new RemoveAlgae(CLAW,INTAKE,0, 100)));
         driverController.y()/*.and(() -> CLAW.pieceDetected())*/.onTrue(new Groundsetup(CLAW, INTAKE).andThen(new RetractAlgae(CLAW, INTAKE)));
 
         driverController.x().onTrue(new ProcessorScore(INTAKE));
 
         operatorController.y().and(() -> CLAW.pieceDetected()).onTrue(new ReefScoring(CLAW, ELEVATOR, 3, INTAKE));
-        operatorController.y().and(() -> !CLAW.pieceDetected()).onTrue(new ReefScoring(CLAW, ELEVATOR, 13, INTAKE).andThen(new RemoveAlgae(CLAW,INTAKE,3)));
+        operatorController.y().and(() -> !CLAW.pieceDetected()).onTrue(new ReefScoring(CLAW, ELEVATOR, 13, INTAKE).andThen(new RemoveAlgae(CLAW,INTAKE,3,95)));
 
         operatorController.b().onTrue(new ReefScoring(CLAW, ELEVATOR, 4, INTAKE));
         

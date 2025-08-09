@@ -13,7 +13,7 @@ import frc.robot.Constants;
 public class Claw extends SubsystemBase
 {
     // Order of setpoint encoder values: L1(placeholder), L2, L3, L4, Net scoring
-    private double[] setPoints = {0, 10, 25.28395062, 25.28395062, 21.33333333, 20.54320988, 30, 34, 15, 1.7, 16}; // 0 is placeholder for L1 (NOT YET DESIGNED)
+    private double[] setPoints = {0, 10, 25.28395062, 25.28395062, 21.33333333, 20.54320988, 30, 34, 15, 1.7, 17}; // 0 is placeholder for L1 (NOT YET DESIGNED)
     private double errorRange = 0.25;
 
     private TalonFX clawRotate;
@@ -45,7 +45,7 @@ public class Claw extends SubsystemBase
         configsRotate.Slot1.kI = Constants.ClawConstants.claw_I;
         configsRotate.Slot1.kD = Constants.ClawConstants.claw_D;
 
-        configsRotate.Slot2.kP = Constants.ClawConstants.claw_AlgaeP;
+        configsRotate.Slot2.kP = Constants.ClawConstants.claw_P12000;
         configsRotate.Slot2.kI = Constants.ClawConstants.claw_I;
         configsRotate.Slot2.kD = Constants.ClawConstants.claw_D;
 

@@ -41,9 +41,9 @@ public final class Constants {
         public static final double claw_I = 0;
         public static final double claw_D = 0;
 
-        public static final double claw_P6000 = 0.25;
+        public static final double claw_P6000 = 0.2;
 
-        public static final double claw_AlgaeP = 1.4;
+        public static final double claw_P12000 = 1.8;
     }
 
     public static final class LimelightConstants

@@ -168,7 +168,7 @@ public class RobotContainer {
         //driverController.povLeft().onTrue(new StowElevatorClaw(ELEVATOR, CLAW));
 
         //operatorController.rightTrigger().whileTrue(new IntakeAlgae(CLAW, INTAKE)).onFalse(new StowAlgae(CLAW, INTAKE));
-        driverController.povUp().onTrue(new netHigh(CLAW, ELEVATOR, INTAKE).andThen(new NetScoreIntake(CLAW, INTAKE, ELEVATOR)));
+        driverController.povUp().onTrue(new netHigh(CLAW, ELEVATOR, INTAKE,1).andThen(new NetScoreIntake(CLAW, INTAKE, ELEVATOR)));
         //operatorController.povRight().onTrue(new ProcessorScore(INTAKE));
 
         operatorController.a().onTrue(new ReefScoring(CLAW, ELEVATOR, 1, INTAKE).andThen(new Eject(CLAW, 1)).andThen(new StowElevatorClaw(ELEVATOR, CLAW)));

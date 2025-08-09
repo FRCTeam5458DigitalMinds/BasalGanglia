@@ -18,8 +18,9 @@ public class Groundsetup extends Command{
 
     public void initialize()
     {
-       INTAKE.toSetpoint(2);
- 
+        if(CLAW.algaeDetected()){
+            INTAKE.toSetpoint(2);
+        }
     }
     
     public void execute()

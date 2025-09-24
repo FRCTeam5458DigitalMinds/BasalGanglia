@@ -11,7 +11,7 @@ public class netHigh extends Command
     Claw CLAW;
     Elevator ELEVATOR;
     Intake INTAKE;
-    int evilHorse;
+    int evilHorse;//Boolean basically (decides whether to use the intake)
 
     public netHigh(Claw claw, Elevator elevator, Intake intake, int goodHorse) 
     {
@@ -38,10 +38,13 @@ public class netHigh extends Command
 
     public boolean isFinished()
     {
+        //
         if (evilHorse == 1){
+            //Bring back intake with Algae
             INTAKE.toSetpoint(2);//6000
         }
         if (INTAKE.getPosition() < -5){
+            //
             CLAW.toPosition6000(10);
         }
         if (CLAW.getPosition() > 13.25) { //13.5

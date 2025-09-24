@@ -29,9 +29,9 @@ public class AlignToReefTagRelative extends Command {
   private SwerveRequest.RobotCentric robotDrive;
   private double tagID;
   private boolean invert = false;
-  public double Freaklin = -0.62;
+  public double Freaklin = -0.62; //constant (needed) (for some reason review later)
 
-  private Pose2d robotPose;
+  private Pose2d robotPose; 
   private Pose2d tagPose;
   private Pose2d relativePose;
   private AprilTagFieldLayout field;

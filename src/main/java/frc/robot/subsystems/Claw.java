@@ -14,8 +14,10 @@ public class Claw extends SubsystemBase
 {
     // Order of setpoint encoder values: L1(placeholder), L2, L3, L4, Net scoring
     private double[] setPoints = {0, 10, 25.28395062, 25.28395062, 21.33333333, 20.54320988, 30, 34, 15, 1.7, 17}; // 0 is placeholder for L1 (NOT YET DESIGNED)
+    //margin of error for movement
     private double errorRange = 0.25;
-
+    
+    //identifies claw properties
     private TalonFX clawRotate;
     private TalonFX clawSpin;
     private CANrange clawTOF;
@@ -27,15 +29,18 @@ public class Claw extends SubsystemBase
 
     public Claw()
     {
+        //initates the properities with IDs
         clawRotate = new TalonFX(Constants.ClawConstants.clawID1);
         clawSpin = new TalonFX(Constants.ClawConstants.clawID2);
         clawTOF = new CANrange(Constants.ClawConstants.canRangeID);
         clawFunnel = new TalonFX(Constants.ClawConstants.clawID3);
         
+        //Gives the motors configuration values to be modified
         clawRotate.getConfigurator().apply(new TalonFXConfiguration());
         clawSpin.getConfigurator().apply(new TalonFXConfiguration());
         clawFunnel.getConfigurator().apply(new TalonFXConfiguration());
 
+        //Sets PID values for claw rotation
         TalonFXConfiguration configsRotate = new TalonFXConfiguration();
         configsRotate.Slot0.kP = Constants.ClawConstants.claw_P;
         configsRotate.Slot0.kI = Constants.ClawConstants.claw_I;
@@ -50,7 +55,7 @@ public class Claw extends SubsystemBase
         configsRotate.Slot2.kD = Constants.ClawConstants.claw_D;
 
 
-
+        
 
         configsRotate.withMotorOutput(new MotorOutputConfigs().withInverted(CounterClockwise_Positive));
 

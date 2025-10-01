@@ -18,20 +18,24 @@ public class Intake extends SubsystemBase {
 
     public Intake() 
     {
+        
         intakeMotor = new TalonFX(Constants.IntakeConstants.intakeID1);
         RollerMotor = new TalonFX(Constants.IntakeConstants.intakeID2);
-
+        
+        //configures the motors
         intakeMotor.getConfigurator().apply(new TalonFXConfiguration());
         RollerMotor.getConfigurator().apply(new TalonFXConfiguration());
 
         TalonFXConfiguration intakeConfigs = new TalonFXConfiguration();
+        //setups the PID value for the intake
         intakeConfigs.Slot0.kP = Constants.IntakeConstants.intake_P;
         intakeConfigs.Slot0.kI = Constants.IntakeConstants.intake_I;
         intakeConfigs.Slot0.kD = Constants.IntakeConstants.intake_D; 
 
+        //Extra slower movement
         intakeConfigs.Slot1.kD = Constants.IntakeConstants.intake_P6000; 
 
-
+        
         intakeConfigs.CurrentLimits.withStatorCurrentLimit(25);
         intakeConfigs.CurrentLimits.withStatorCurrentLimitEnable(true);
 

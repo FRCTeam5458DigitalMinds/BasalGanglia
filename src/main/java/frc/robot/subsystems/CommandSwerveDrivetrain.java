@@ -80,6 +80,7 @@ public class CommandSwerveDrivetrain extends TunerSwerveDrivetrain implements Su
     private boolean m_hasAppliedOperatorPerspective = false;
     private int lastKnownReefTag = 7;
 
+    //creates an image in the field
     private final Field2d m_field = new Field2d();
 
     /* Swerve requests to apply during SysId characterization */
@@ -95,6 +96,7 @@ public class CommandSwerveDrivetrain extends TunerSwerveDrivetrain implements Su
         VecBuilder.fill(1.5, 1.5, Units.degreesToRadians(5)),
         VecBuilder.fill(1.5, 1.5, Units.degreesToRadians(30)));
 
+        //gets position based of apriltags
     public Pose2d getPose()
     {
         return m_poseEstimator.getEstimatedPosition();

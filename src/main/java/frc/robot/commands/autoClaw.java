@@ -22,6 +22,7 @@ public class autoClaw extends Command
 
     public boolean isFinished()
     {
+        //run motors until there's a coral
         if (CLAW.pieceDetected() == true && CLAW.getPosition() < 1)
         {
             SmartDashboard.putBoolean("Piece Detected", CLAW.pieceDetected());

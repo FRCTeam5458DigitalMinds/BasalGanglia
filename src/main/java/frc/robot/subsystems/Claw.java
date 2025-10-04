@@ -56,9 +56,10 @@ public class Claw extends SubsystemBase
 
 
         
-
+        //switches the signs for motor encoder
         configsRotate.withMotorOutput(new MotorOutputConfigs().withInverted(CounterClockwise_Positive));
 
+        //prevents motors from heating up and dying
         configsRotate.CurrentLimits.withStatorCurrentLimit(35);
         configsRotate.CurrentLimits.withStatorCurrentLimitEnable(true);
 
@@ -66,6 +67,7 @@ public class Claw extends SubsystemBase
         configsSpin.CurrentLimits.withStatorCurrentLimit(30);
         configsSpin.CurrentLimits.withStatorCurrentLimitEnable(true);
 
+        //applies the configurations
         clawRotate.getConfigurator().apply(configsRotate);
         clawSpin.getConfigurator().apply(configsSpin);
         clawFunnel.getConfigurator().apply(configsSpin);
@@ -79,7 +81,8 @@ public class Claw extends SubsystemBase
     }
 
     public boolean algaeDetected()
-    {        
+    {   
+        //uses CANRange to detect algae     
         SmartDashboard.putBoolean("Algae Detect", getTOFDistance() < .2);
         return getTOFDistance() < .06;
     }
@@ -90,16 +93,18 @@ public class Claw extends SubsystemBase
     }
     public boolean pieceDetected()
     {
+        //uses CANRange to detect coral piece
         SmartDashboard.putBoolean("Piece Detect", getTOFDistance() < .4);
         return getTOFDistance() < .1;
     }
-
+    //gets the distance the sensor reads
     public double getTOFDistance()
     {
         return clawTOF.getDistance().getValueAsDouble();
     }
 
-
+    //STEEL BALL RUN REFERENCE????
+    //gets speed
     public double getSpin()
     {
         return clawSpin.get();
@@ -108,17 +113,22 @@ public class Claw extends SubsystemBase
     {
         return clawRotate.get();
     }
-
+    //never use
+    public double getRollers()
+    {
+        return clawSpin.get();
+    }
+    //use if you don't wanna use a setpoint
     public void customPosition(double setPoint)
     {
         clawRotate.setControl(m_request.withPosition(setPoint).withSlot(0));
     }
-
+    //uses the setpoints based on the list on line 16
     public void toPosition(int setpointIndex) 
     {
         clawRotate.setControl(m_request.withPosition(setPoints[setpointIndex]).withSlot(0));
     }
-    
+    //uses different pid values
     public void toPosition6000(int setpointIndex) 
     {
         clawRotate.setControl(m_request.withPosition(setPoints[setpointIndex]).withSlot(1));
@@ -128,15 +138,12 @@ public class Claw extends SubsystemBase
         clawRotate.setControl(m_request.withPosition(setPoints[setpointIndex]).withSlot(2));
     }
 
-    public double getRollers()
-    {
-        return clawSpin.get();
-    }
+   
     public double getPosition()
     {
         return clawRotate.getPosition().getValueAsDouble();
     }
-
+    //takes position of the claw and sees if it matches with the setpoint
     public boolean checkSetpoint(int level)
     {
         if (getPosition() < setPoints[level] + errorRange && getPosition() > setPoints[level] - errorRange)
@@ -146,7 +153,7 @@ public class Claw extends SubsystemBase
         
         return false;
     }
-
+    //runs clawmotor until coral
     public void autoIntake()
     {
         if (pieceDetected())
@@ -158,7 +165,7 @@ public class Claw extends SubsystemBase
             spinRollers(50);
         }
     }
-
+    //checks if claw is at a specific number
     public boolean checkRotation(Double point)
     {
         if (getPosition() < point + errorRange && getPosition() > point - errorRange)

@@ -6,6 +6,7 @@ import com.ctre.phoenix6.controls.PositionVoltage;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 
+//read claw and elevator first
 public class Intake extends SubsystemBase {
     // Order of setpoint encoder values: Full stow, stow with algae, algae intake
     private double[] setPoints = {0, -0.866812, -13.,-7.86899, -8};

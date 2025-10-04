@@ -17,7 +17,7 @@ public class Elevator extends SubsystemBase {
     //Order of setpoint encoder values: 0, L1, L2, L3, L4, Net scoring
     //48-3.75 == 44.25
     //48-9.12 = 39
-
+    //setup objects
     private double[] stages = {0, 0, 4.25, 17.5, 41, 0,0};
     private double errorRange = 1.25;
     
@@ -31,8 +31,9 @@ public class Elevator extends SubsystemBase {
     private SparkMaxConfig elevatorConfig2;
 
     private SparkClosedLoopController elevatorController;
-
+    
     public Elevator() {
+        
         elevator2 = new SparkMax(elevatorID2, MotorType.kBrushless);
         elevator1 = new SparkMax(elevatorID1, MotorType.kBrushless);
 
@@ -79,6 +80,7 @@ public class Elevator extends SubsystemBase {
     
     public void changeStage(int stageIndex) 
     {
+        //sets up algae pickup
         if (stageIndex > 10)
         {
             if (stageIndex == 12)
@@ -89,12 +91,13 @@ public class Elevator extends SubsystemBase {
                 elevatorController.setReference(stages[stageIndex - 10] + 1, ControlType.kPosition, ClosedLoopSlot.kSlot0);
             }
         }
+        //sets up eject coral
         else 
         {
             elevatorController.setReference(stages[stageIndex], ControlType.kPosition, ClosedLoopSlot.kSlot0);
         }
     }
-
+    //same method but different pid values
     public void changeStage6000(int stageIndex) 
     {
         if (stageIndex > 10)
@@ -112,7 +115,7 @@ public class Elevator extends SubsystemBase {
             elevatorController.setReference(stages[stageIndex], ControlType.kPosition, ClosedLoopSlot.kSlot1);
         }
     }
-
+    //checks if elevator matches stage
     public boolean checkStage(int stage)
     {
         if (getPosition() < stages[stage] + errorRange && getPosition() > stages[stage] - errorRange)
@@ -122,16 +125,17 @@ public class Elevator extends SubsystemBase {
 
         return false;
     }
-
+    //get velocity
     public double getV()
     {
         return elevator1.get();
     }
-
+    //get encoder of value of elevator motor
     public double getPosition()
     {
         return elevator1.getEncoder().getPosition();
     }
+    //checks if the elevator position is within the L4 range
     public boolean checkL4()
     {
         if (getPosition() > 20 && getPosition() < 21)
@@ -141,5 +145,3 @@ public class Elevator extends SubsystemBase {
         return false;
     }
 }
-
-

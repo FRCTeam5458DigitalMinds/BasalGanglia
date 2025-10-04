@@ -16,7 +16,7 @@ public class Eject extends Command
 
         addRequirements(claw);
     }
-
+    //sets the roller speed for every level except L1
     public void initialize()
     {
         if (LEVEL != 1)
@@ -40,6 +40,7 @@ public class Eject extends Command
 
     public boolean isFinished()
     {
+        //resets claw rollers
         if (Math.abs(CLAW.getV()) < 0.05 && LEVEL != 1)
         {
             SmartDashboard.putBoolean("eject done", false);
@@ -54,6 +55,7 @@ public class Eject extends Command
                 return true;
             }
         }
+        //finish L1 shooting
         if (LEVEL == 1 && !CLAW.TOFdetect())
         {
             return true;

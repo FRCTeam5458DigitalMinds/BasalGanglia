@@ -3,25 +3,25 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 3.9786647727272726,
-        "y": 5.326292613636363
+        "x": 3.8830769230769224,
+        "y": 5.077692307692308
       },
       "prevControl": null,
       "nextControl": {
-        "x": 4.507735128079724,
-        "y": 4.878416072604221
+        "x": 4.412147278429374,
+        "y": 4.629815766660166
       },
       "isLocked": false,
       "linkedName": "BlueFL"
     },
     {
       "anchor": {
-        "x": 1.4957386363636362,
-        "y": 7.420326704545454
+        "x": 0.46698717948717894,
+        "y": 6.832179487179487
       },
       "prevControl": {
-        "x": 1.2927357061127316,
-        "y": 7.566236986258383
+        "x": 0.2639842492362743,
+        "y": 6.978089768892416
       },
       "nextControl": null,
       "isLocked": false,
@@ -29,7 +29,21 @@
     }
   ],
   "rotationTargets": [],
-  "constraintZones": [],
+  "constraintZones": [
+    {
+      "name": "Constraints Zone",
+      "minWaypointRelativePos": 0.7043189368770764,
+      "maxWaypointRelativePos": 1.0,
+      "constraints": {
+        "maxVelocity": 3.5,
+        "maxAcceleration": 3.0,
+        "maxAngularVelocity": 540.0,
+        "maxAngularAcceleration": 720.0,
+        "nominalVoltage": 12.0,
+        "unlimited": false
+      }
+    }
+  ],
   "pointTowardsZones": [],
   "eventMarkers": [],
   "globalConstraints": {

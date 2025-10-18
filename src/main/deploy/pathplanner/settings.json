@@ -20,8 +20,8 @@
     "Go Top",
     "Important+testing"
   ],
-  "defaultMaxVel": 4.5,
-  "defaultMaxAccel": 3.5,
+  "defaultMaxVel": 2.7,
+  "defaultMaxAccel": 3.0,
   "defaultMaxAngVel": 540.0,
   "defaultMaxAngAccel": 720.0,
   "defaultNominalVoltage": 12.0,

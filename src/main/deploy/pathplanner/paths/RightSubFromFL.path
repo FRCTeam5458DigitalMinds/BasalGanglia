@@ -3,25 +3,25 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 3.8830769230769224,
-        "y": 5.077692307692308
+        "x": 3.609715909090909,
+        "y": 5.086974431818182
       },
       "prevControl": null,
       "nextControl": {
-        "x": 4.412147278429374,
-        "y": 4.629815766660166
+        "x": 4.138786264443359,
+        "y": 4.63909789078604
       },
       "isLocked": false,
       "linkedName": "BlueFL"
     },
     {
       "anchor": {
-        "x": 0.46698717948717894,
-        "y": 6.832179487179487
+        "x": 1.3960227272727275,
+        "y": 7.320610795454545
       },
       "prevControl": {
-        "x": 0.2639842492362743,
-        "y": 6.978089768892416
+        "x": 1.1930197970218228,
+        "y": 7.466521077167474
       },
       "nextControl": null,
       "isLocked": false,
@@ -47,8 +47,8 @@
   "pointTowardsZones": [],
   "eventMarkers": [],
   "globalConstraints": {
-    "maxVelocity": 4.5,
-    "maxAcceleration": 3.5,
+    "maxVelocity": 2.7,
+    "maxAcceleration": 3.0,
     "maxAngularVelocity": 540.0,
     "maxAngularAcceleration": 720.0,
     "nominalVoltage": 12.0,
